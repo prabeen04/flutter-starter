@@ -5,7 +5,7 @@ class NewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: new Center(
-        child: new Text('News Screen')
+        child: new Text('News Screens')
       )
     );
   }

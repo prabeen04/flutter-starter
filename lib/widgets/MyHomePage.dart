@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/ProfileScreen.dart';
+import '../screens/NewsScreen.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -61,6 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 // ...
                 // Then close the drawer
                 Navigator.pop(context);
+                Navigator.of(context).push(
+                  new MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                    new NewsScreen()
+                  )
+                );
               },
             ),
           ],
