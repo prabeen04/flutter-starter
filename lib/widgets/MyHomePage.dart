@@ -46,6 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 // ...
                 // Then close the drawer
                 Navigator.pop(context);
+                Navigator.of(context).push(
+                  new MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                    new ProfileScreen()
+                  )
+                );
               },
             ),
             ListTile(
