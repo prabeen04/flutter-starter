@@ -29,7 +29,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: new Drawer(
         child: new Container(
-        child: new Text('data'),
+        child: new ListBody(
+          children: <Widget>[
+            new ListTile(
+              title: new Text('PAGE ONE'),
+            )
+          ],
+        )
         ),
       ),
       body: new Center(
