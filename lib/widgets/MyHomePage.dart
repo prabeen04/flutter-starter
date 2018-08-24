@@ -27,17 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: new Text(widget.title),
       ),
-      drawer: new Drawer(
-        child: new Container(
-            child: new ListTile(
-          leading: new Icon(Icons.change_history),
-          title: new Text('Change history'),
-          onTap: () {
-            // change app state...
-            Navigator.pop(context); // close the drawer
-          },
-        )),
-      ),
+      drawer: new Drawer(),
       body: new Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
