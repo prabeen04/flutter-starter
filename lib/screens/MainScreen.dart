@@ -30,43 +30,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: <Widget>[
-          new IconButton(
-            icon: new Icon(
-              Icons.notifications,
-              color: Colors.black38,
-            ),
-            tooltip: 'Notifications',
-            onPressed: () {
-              print('Notification Icon Pressed');
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => NotificationScreen()));
-            },
-          ),
-          new IconButton(
-            icon: new Icon(
-              Icons.settings,
-              color: Colors.black38,
-            ),
-            tooltip: 'Settings',
-            onPressed: () {
-              print('Settings Icon Pressed');
-            },
-          ),
-          new IconButton(
-            icon: new Icon(
-              Icons.account_circle,
-              color: Colors.black38,
-            ),
-            tooltip: 'Profile',
-            onPressed: () {
-              print('Settings Icon Pressed');
-            },
-          ),
-        ],
-      ),
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
