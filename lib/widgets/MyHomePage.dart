@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../screens/ProfileScreen.dart';
 import '../screens/NewsScreen.dart';
 import '../screens/NotificationScreen.dart';
+import './FABIcon.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -13,13 +14,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,13 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Image.network(
               'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
             ),
-            Text(
-              'Click as many times you want',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
           ],
         ),
       ),
@@ -114,11 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // Bottom Navigator Starts here!!
 
       // App level floating action Button!!
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: FancyFab() // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

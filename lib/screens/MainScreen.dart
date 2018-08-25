@@ -3,7 +3,6 @@ import '../widgets/MyHomePage.dart';
 import './ProfileScreen.dart';
 import './NewsScreen.dart';
 import '../widgets/placeholder.dart';
-import './NotificationScreen.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key key, this.title}) : super(key: key);
