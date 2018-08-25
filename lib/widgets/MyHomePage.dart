@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../screens/ProfileScreen.dart';
 import '../screens/NewsScreen.dart';
 import '../widgets/placeholder.dart';
+import '../screens/NotificationScreen.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -39,19 +40,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: <Widget>[
     new IconButton(
-      icon: new Icon(Icons.playlist_play),
-      tooltip: 'Air it',
-      onPressed: null,
+      icon: new Icon(Icons.notifications, color: Colors.black38,),
+      tooltip: 'Notifications',
+      onPressed: (){
+        print('Notification Icon Pressed');
+        Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => NotificationScreen()));
+      },
     ),
     new IconButton(
-      icon: new Icon(Icons.playlist_add),
-      tooltip: 'Restitch it',
-      onPressed: null,
+      icon: new Icon(Icons.settings, color: Colors.black38,),
+      tooltip: 'Settings',
+      onPressed: (){
+        print('Settings Icon Pressed');
+      },
     ),
     new IconButton(
-      icon: new Icon(Icons.playlist_add_check),
-      tooltip: 'Repair it',
-      onPressed: null,
+      icon: new Icon(Icons.account_circle, color: Colors.black38,),
+      tooltip: 'Profile',
+      onPressed: (){
+        print('Settings Icon Pressed');
+      },
     ),
   ],
       ),
