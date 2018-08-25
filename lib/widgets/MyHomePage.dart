@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: Text('Profile'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('News'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(MaterialPageRoute(
