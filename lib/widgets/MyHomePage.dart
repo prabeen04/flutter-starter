@@ -90,6 +90,14 @@ class _MyHomePageState extends State<MyHomePage> {
             title: new Text('Messages'),
           ),
           BottomNavigationBarItem(
+            icon: new Icon(Icons.notifications),
+            title: new Text('Notification'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.settings),
+            title: new Text('Settings'),
+          ),
+          BottomNavigationBarItem(
               icon: Icon(Icons.person), title: Text('Profile'))
         ],
       ),
