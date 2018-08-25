@@ -37,6 +37,23 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+    new IconButton(
+      icon: new Icon(Icons.playlist_play),
+      tooltip: 'Air it',
+      onPressed: null,
+    ),
+    new IconButton(
+      icon: new Icon(Icons.playlist_add),
+      tooltip: 'Restitch it',
+      onPressed: null,
+    ),
+    new IconButton(
+      icon: new Icon(Icons.playlist_add_check),
+      tooltip: 'Repair it',
+      onPressed: null,
+    ),
+  ],
       ),
       drawer: Drawer(
         child: ListView(
