@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
-                    Screen()
+                   NewsScreen()
                   )
                 );
               },
