@@ -8,7 +8,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -22,11 +22,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      drawer: new Drawer(
+      drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the Drawer if there isn't enough vertical
         // space to fit everything.
@@ -48,9 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Then close the drawer
                 Navigator.pop(context);
                 Navigator.of(context).push(
-                  new MaterialPageRoute(
+                  MaterialPageRoute(
                     builder: (BuildContext context) =>
-                    new ProfileScreen()
+                    ProfileScreen()
                   )
                 );
               },
@@ -63,9 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Then close the drawer
                 Navigator.pop(context);
                 Navigator.of(context).push(
-                  new MaterialPageRoute(
+                  MaterialPageRoute(
                     builder: (BuildContext context) =>
-                    new NewsScreen()
+                    Screen()
                   )
                 );
               },
@@ -73,56 +73,56 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: new Center(
-        child: new Column(
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.network(
               'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
             ),
-            new Text(
+            Text(
               'Click as many times you want',
             ),
-            new Text(
+            Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
           ],
         ),
       ),
-      bottomNavigationBar: new Container(
+      bottomNavigationBar: Container(
           color: Colors.white,
           height: 50.0,
           alignment: Alignment.center,
-          child: new BottomAppBar(
-            child: new Row(
+          child: BottomAppBar(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                new IconButton(
+                IconButton(
                   icon: Icon(
                     Icons.home,
                   ),
                   onPressed: () {},
                 ),
-                new IconButton(
+                IconButton(
                   icon: Icon(
                     Icons.search,
                   ),
                   onPressed: null,
                 ),
-                new IconButton(
+                IconButton(
                   icon: Icon(
                     Icons.add_box,
                   ),
                   onPressed: null,
                 ),
-                new IconButton(
+                IconButton(
                   icon: Icon(
                     Icons.favorite,
                   ),
                   onPressed: null,
                 ),
-                new IconButton(
+                IconButton(
                   icon: Icon(
                     Icons.account_box,
                   ),
@@ -132,10 +132,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

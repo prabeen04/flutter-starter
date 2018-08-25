@@ -4,7 +4,7 @@ class NewsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Container(child: new Center(child: new Text('News Screens'))),
+      body: Container(child: Center(child: Text('News Screens'))),
     );
   }
 }
