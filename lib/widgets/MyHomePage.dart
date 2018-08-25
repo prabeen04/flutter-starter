@@ -44,24 +44,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 // ...
                 // Then close the drawer
                 Navigator.pop(context);
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                    ProfileScreen()
-                  )
-                );
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => ProfileScreen()));
               },
             ),
             ListTile(
               title: Text('Item 2'),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                   NewsScreen()
-                  )
-                );
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => NewsScreen()));
               },
             ),
           ],
@@ -84,6 +76,25 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+
+      // Bottom Navigator Starts here!!
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0, // this will be set when a new tab is tapped
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home),
+            title: new Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.mail),
+            title: new Text('Messages'),
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person), title: Text('Profile'))
+        ],
+      ),
+
+      // App level floating action Button!!
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
