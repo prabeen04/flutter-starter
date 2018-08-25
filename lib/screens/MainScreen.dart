@@ -19,7 +19,9 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _children = [
     MyHomePage(),
     PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.green)
+    PlaceholderWidget(Colors.pinkAccent),
+    PlaceholderWidget(Colors.green),
+    PlaceholderWidget(Colors.lightBlueAccent)
   ];
   void onTabTapped(int index) {
     setState(() {
@@ -67,6 +69,7 @@ class _MainScreenState extends State<MainScreen> {
       // Bottom Navigator Starts here!!
 
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
         currentIndex:
             _currentIndex, // this will be set when a new tab is tapped
@@ -78,6 +81,14 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: new Icon(Icons.mail),
             title: new Text('Messages'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.chat),
+            title: new Text('Chat'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.notifications),
+            title: new Text('Notification'),
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person), title: Text('Profile'))
