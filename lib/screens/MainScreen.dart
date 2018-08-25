@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
-import '../screens/ProfileScreen.dart';
-import '../screens/NewsScreen.dart';
-import '../screens/NotificationScreen.dart';
+import '../widgets/MyHomePage.dart';
+import './ProfileScreen.dart';
+import './NewsScreen.dart';
+import '../widgets/placeholder.dart';
+import './NotificationScreen.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  MainScreen({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  void _incrementCounter() {
+class _MainScreenState extends State<MainScreen> {
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    MyHomePage(),
+    PlaceholderWidget(Colors.deepOrange),
+    PlaceholderWidget(Colors.green)
+  ];
+  void onTabTapped(int index) {
     setState(() {
-      _counter++;
+      _currentIndex = index;
     });
   }
 
@@ -24,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text(widget.title),
         actions: <Widget>[
           new IconButton(
             icon: new Icon(
@@ -93,32 +100,26 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.network(
-              'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
-            ),
-            Text(
-              'Click as many times you want',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-
+      body: _children[_currentIndex], // new
       // Bottom Navigator Starts here!!
 
-      // App level floating action Button!!
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex:
+            _currentIndex, // this will be set when a new tab is tapped
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home),
+            title: new Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.mail),
+            title: new Text('Messages'),
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person), title: Text('Profile'))
+        ],
+      ),
     );
   }
 }
