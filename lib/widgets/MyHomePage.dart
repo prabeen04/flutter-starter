@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/ProfileScreen.dart';
 import '../screens/NewsScreen.dart';
+import '../widgets/placeholder.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -14,17 +15,23 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _currentIndex = 0;
-  final List<Widget> _children = [];
+  final List<Widget> _children = [
+    PlaceholderWidget(Colors.white),
+    PlaceholderWidget(Colors.deepOrange),
+    PlaceholderWidget(Colors.green)
+  ];
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
   }
-void onTabTapped(int index) {
-   setState(() {
-     _currentIndex = index;
-   });
- }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,8 +92,9 @@ void onTabTapped(int index) {
       // Bottom Navigator Starts here!!
 
       bottomNavigationBar: BottomNavigationBar(
-         onTap: onTabTapped,
-        currentIndex: _currentIndex, // this will be set when a new tab is tapped
+        onTap: onTabTapped,
+        currentIndex:
+            _currentIndex, // this will be set when a new tab is tapped
         items: [
           BottomNavigationBarItem(
             icon: new Icon(Icons.home),
@@ -97,8 +105,7 @@ void onTabTapped(int index) {
             title: new Text('Messages'),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-               title: Text('Profile'))
+              icon: Icon(Icons.person), title: Text('Profile'))
         ],
       ),
 
