@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  int currentIndex = 0;
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -27,9 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the Drawer if there isn't enough vertical
-        // space to fit everything.
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
@@ -58,9 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: Text('Item 2'),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
                 Navigator.pop(context);
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -90,48 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-          color: Colors.white,
-          height: 50.0,
-          alignment: Alignment.center,
-          child: BottomAppBar(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(
-                    Icons.home,
-                  ),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.search,
-                  ),
-                  onPressed: null,
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.add_box,
-                  ),
-                  onPressed: null,
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.favorite,
-                  ),
-                  onPressed: null,
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.account_box,
-                  ),
-                  onPressed: null,
-                ),
-              ],
-            ),
-          ),
-        ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
