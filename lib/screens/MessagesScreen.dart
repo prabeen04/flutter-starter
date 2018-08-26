@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+
 Future<Post> fetchPost() async {
   final response =
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
@@ -32,6 +33,7 @@ class Post {
     );
   }
 }
+
 class MessagesScreen extends StatefulWidget {
   @override
   _MessagesScreenState createState() => _MessagesScreenState();
@@ -47,8 +49,19 @@ class _MessagesScreenState extends State<MessagesScreen> {
           title: Text("Messages"),
         ),
         body: Container(
-          child: Text('Message Screen')
-        ),
+            child: FutureBuilder<Post>(
+          future: fetchPost(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Text(snapshot.data.title);
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
+
+            // By default, show a loading spinner
+            return CircularProgressIndicator();
+          },
+        )),
       ),
     );
   }
