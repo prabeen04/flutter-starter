@@ -38,15 +38,15 @@ class _MainScreenState extends State<MainScreen> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-                accountName: new Text(
+            UserAccountsDrawerHeader(
+                accountName: Text(
                   "Prabeen",
-                  style: new TextStyle(
+                  style: TextStyle(
                       fontSize: 18.0, fontWeight: FontWeight.w500),
                 ),
-                accountEmail: new Text(
+                accountEmail: Text(
                   "prabeen.strange@gmail.com",
-                  style: new TextStyle(
+                  style: TextStyle(
                       fontSize: 18.0, fontWeight: FontWeight.w500),
                 )),
             ListTile(
@@ -78,23 +78,23 @@ class _MainScreenState extends State<MainScreen> {
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
         currentIndex:
-            _currentIndex, // this will be set when a new tab is tapped
+            _currentIndex, // this will be set when a tab is tapped
         items: [
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
+            icon: Icon(Icons.home),
+            title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text('Messages'),
+            icon: Icon(Icons.mail),
+            title: Text('Messages'),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.chat),
-            title: new Text('Chat'),
+            icon: Icon(Icons.chat),
+            title: Text('Chat'),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.notifications),
-            title: new Text('Notification'),
+            icon: Icon(Icons.notifications),
+            title: Text('Notification'),
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person), title: Text('Profile'))
