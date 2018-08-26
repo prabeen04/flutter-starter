@@ -3,6 +3,7 @@ import '../widgets/MyHomePage.dart';
 import './MessagesScreen.dart';
 import './ProfileScreen.dart';
 import './NewsScreen.dart';
+import './ChatScreen.dart';
 import '../widgets/placeholder.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _children = [
     MyHomePage(),
     MessagesScreen(),
-    PlaceholderWidget(Colors.deepOrange),
+    ChatScreen(),
     PlaceholderWidget(Colors.green),
     PlaceholderWidget(Colors.lightBlueAccent)
   ];
