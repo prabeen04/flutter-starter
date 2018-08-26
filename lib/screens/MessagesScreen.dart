@@ -49,7 +49,8 @@ class _MessagesScreenState extends State<MessagesScreen> {
           title: Text("Messages"),
         ),
         body: Container(
-            child: FutureBuilder<Post>(
+            child: Center(
+                child: FutureBuilder<Post>(
           future: fetchPost(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -61,7 +62,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
             // By default, show a loading spinner
             return CircularProgressIndicator();
           },
-        )),
+        ))),
       ),
     );
   }
