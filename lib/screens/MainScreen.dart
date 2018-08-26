@@ -39,15 +39,16 @@ class _MainScreenState extends State<MainScreen> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
+                currentAccountPicture: new CircleAvatar(
+                  backgroundImage: new NetworkImage('https://i.ytimg.com/vi/xwa1cBWWCVY/hqdefault.jpg'),
+                ),
                 accountName: Text(
                   "Prabeen",
-                  style: TextStyle(
-                      fontSize: 18.0, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
                 ),
                 accountEmail: Text(
                   "prabeen.strange@gmail.com",
-                  style: TextStyle(
-                      fontSize: 18.0, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
                 )),
             ListTile(
               title: Text('Profile'),
@@ -77,8 +78,7 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
-        currentIndex:
-            _currentIndex, // this will be set when a tab is tapped
+        currentIndex: _currentIndex, // this will be set when a tab is tapped
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
