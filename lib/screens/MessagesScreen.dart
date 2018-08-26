@@ -46,6 +46,9 @@ class _MessagesScreenState extends State<MessagesScreen> {
         appBar: AppBar(
           title: Text("Messages"),
         ),
+        body: Container(
+          child: Text('Message Screen')
+        ),
       ),
     );
   }
