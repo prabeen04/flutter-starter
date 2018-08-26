@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:async';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
 class MessagesScreen extends StatefulWidget {
@@ -12,7 +15,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: Text("Messages"),
         ),
       ),
     );

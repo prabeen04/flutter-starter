@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/MyHomePage.dart';
+import './MessagesScreen.dart';
 import './ProfileScreen.dart';
 import './NewsScreen.dart';
 import '../widgets/placeholder.dart';
@@ -17,8 +18,8 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     MyHomePage(),
+    MessagesScreen(),
     PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.pinkAccent),
     PlaceholderWidget(Colors.green),
     PlaceholderWidget(Colors.lightBlueAccent)
   ];
