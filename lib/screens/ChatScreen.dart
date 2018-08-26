@@ -9,7 +9,7 @@ class ChatScreen extends StatelessWidget {
         appBar: AppBar(title: Text('Chats')),
         body: Container(
             padding: const EdgeInsets.all(20.0),
-            child: Row(
+            child: Column(
               children: <Widget>[
                 TextField(
                   keyboardType: TextInputType.text,
