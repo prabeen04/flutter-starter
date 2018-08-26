@@ -38,7 +38,17 @@ class _MainScreenState extends State<MainScreen> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-
+            new UserAccountsDrawerHeader(
+                accountName: new Text(
+                  "Prabeen",
+                  style: new TextStyle(
+                      fontSize: 18.0, fontWeight: FontWeight.w500),
+                ),
+                accountEmail: new Text(
+                  "prabeen.strange@gmail.com",
+                  style: new TextStyle(
+                      fontSize: 18.0, fontWeight: FontWeight.w500),
+                )),
             ListTile(
               title: Text('Profile'),
               onTap: () {
