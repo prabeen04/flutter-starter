@@ -6,11 +6,13 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(title: Text('Chats')),
       body: Container(
         padding: const EdgeInsets.all(20.0),
         child: Center(
             child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             TextField(
               keyboardType: TextInputType.text,
