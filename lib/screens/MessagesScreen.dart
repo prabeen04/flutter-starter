@@ -4,8 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
 Future<Post> fetchPost() async {
-  final response =
-      await http.get('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get('https://jsonplaceholder.typicode.com/posts');
 
   if (response.statusCode == 200) {
     // If the call to the server was successful, parse the JSON
@@ -56,7 +55,12 @@ class _MessagesScreenState extends State<MessagesScreen> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               print(snapshot);
-              return Text('data recieved');
+              return ListView.builder(
+                itemCount: 1,
+                itemBuilder: (BuildContext context, int index) {
+                  return new Text('entry $index');
+                },
+              );
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
             }
