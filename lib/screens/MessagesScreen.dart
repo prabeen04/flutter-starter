@@ -10,7 +10,7 @@ Future<Post> fetchPost() async {
   if (response.statusCode == 200) {
     // If the call to the server was successful, parse the JSON
     print(response.body);
-    return Post.fromJson(json.decode(response.body));
+    return json.decode(response.body);
   } else {
     // If that call was not successful, throw an error.
     throw Exception('Failed to load post');
@@ -55,6 +55,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
           future: fetchPost(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
+              print(snapshot);
               return Text('data recieved');
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
