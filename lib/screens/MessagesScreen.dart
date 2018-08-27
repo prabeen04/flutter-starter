@@ -31,6 +31,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
           title: Text("Messages"),
         ),
         body: Container(
+          padding: EdgeInsets.all(20.0),
             child: Center(
                 child: FutureBuilder(
           future: fetchPost(),
@@ -38,7 +39,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
             if (snapshot.hasData) {
               print(snapshot.data);
               return ListView.builder(
-                itemCount: 4,
+                itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return new Text('entry $index');
                 },
