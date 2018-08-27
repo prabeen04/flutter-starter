@@ -31,26 +31,28 @@ class _MessagesScreenState extends State<MessagesScreen> {
           title: Text("Messages"),
         ),
         body: Container(
-          padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(20.0),
             child: Center(
                 child: FutureBuilder(
-          future: fetchPost(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return ListView.builder(
-                itemCount: snapshot.data.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return new Text('entry ${snapshot.data[index]}');
-                },
-              );
-            } else if (snapshot.hasError) {
-              return Text("${snapshot.error}");
-            }
+              future: fetchPost(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    itemCount: snapshot.data.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                        title: Text(snapshot.data[index].title),
+                      );
+                    },
+                  );
+                } else if (snapshot.hasError) {
+                  return Text("${snapshot.error}");
+                }
 
-            // By default, show a loading spinner
-            return CircularProgressIndicator();
-          },
-        ))),
+                // By default, show a loading spinner
+                return CircularProgressIndicator();
+              },
+            ))),
       ),
     );
   }
