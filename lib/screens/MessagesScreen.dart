@@ -9,6 +9,7 @@ Future<Post> fetchPost() async {
 
   if (response.statusCode == 200) {
     // If the call to the server was successful, parse the JSON
+    print(response.body);
     return Post.fromJson(json.decode(response.body));
   } else {
     // If that call was not successful, throw an error.
@@ -40,7 +41,7 @@ class MessagesScreen extends StatefulWidget {
 }
 
 class _MessagesScreenState extends State<MessagesScreen> {
-  String title;
+  List data;
   @override
   Widget build(BuildContext context) {
     return Container(
