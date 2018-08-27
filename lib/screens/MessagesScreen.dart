@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
-Future<Post> fetchPost() async {
+Future fetchPost() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/posts');
 
   if (response.statusCode == 200) {
@@ -50,13 +50,13 @@ class _MessagesScreenState extends State<MessagesScreen> {
         ),
         body: Container(
             child: Center(
-                child: FutureBuilder<Post>(
+                child: FutureBuilder(
           future: fetchPost(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              print(snapshot);
+              print(snapshot.data);
               return ListView.builder(
-                itemCount: 1,
+                itemCount: 4,
                 itemBuilder: (BuildContext context, int index) {
                   return new Text('entry $index');
                 },
