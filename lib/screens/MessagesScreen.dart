@@ -40,9 +40,9 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   return ListView.builder(
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        title: Text(snapshot.data[index].title),
-                      );
+                      // return ListTile(
+                        return Text('snapshot.data[index].title');
+                      // );
                     },
                   );
                 } else if (snapshot.hasError) {
