@@ -37,11 +37,10 @@ class _MessagesScreenState extends State<MessagesScreen> {
           future: fetchPost(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              print(snapshot.data);
               return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return new Text('entry $index');
+                  return new Text('entry ${snapshot.data[index]}');
                 },
               );
             } else if (snapshot.hasError) {
