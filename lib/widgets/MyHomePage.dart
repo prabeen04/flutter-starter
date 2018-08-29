@@ -96,7 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: Text('Home page  body'),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/chain.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
         // Bottom Navigator Starts here!!
 
         // App level floating action Button!!
