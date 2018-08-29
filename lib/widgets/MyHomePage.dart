@@ -98,12 +98,19 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Stack(
           fit: StackFit.expand,
-            children: <Widget>[
-              Image(
-                image: AssetImage('assets/images/chain.jpg'),
-                fit: BoxFit.fill,
-              )
-            ],
+          children: <Widget>[
+            Image(
+              image: AssetImage('assets/images/chain.jpg'),
+              fit: BoxFit.cover,
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(0.0, 10.0, 20.0, 0.0),
+                alignment: AlignmentDirectional.topEnd,
+                child: Text(
+                  'Welcome',
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 28.0),
+                ))
+          ],
         ),
         // Bottom Navigator Starts here!!
 
