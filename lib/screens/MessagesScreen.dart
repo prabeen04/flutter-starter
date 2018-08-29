@@ -31,7 +31,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
           title: Text("Messages"),
         ),
         body: Container(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
             child: Center(
                 child: FutureBuilder(
               future: fetchPost(),
@@ -41,7 +41,12 @@ class _MessagesScreenState extends State<MessagesScreen> {
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
-                        title: Text('snapshot.data[index].title'),
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.blueAccent,
+                          child: Text(snapshot.data[index]['title'][0].toString().toUpperCase(), 
+                          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),),
+                        ),
+                        title: Text(snapshot.data[index]['title']),
                       );
                     },
                   );
