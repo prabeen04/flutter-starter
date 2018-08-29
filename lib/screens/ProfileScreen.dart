@@ -11,12 +11,13 @@ class ProfileScreen extends StatelessWidget {
           length: 3,
           child: Scaffold(
             appBar: AppBar(
+              backgroundColor: Colors.blueGrey,
               actions: <Widget>[],
               title: TabBar(
                 tabs: [
-                  Tab(icon: Icon(Icons.directions_car)),
-                  Tab(icon: Icon(Icons.directions_transit)),
-                  Tab(icon: Icon(Icons.directions_bike)),
+                  Tab(icon: Icon(Icons.verified_user)),
+                  Tab(icon: Icon(Icons.settings)),
+                  Tab(icon: Icon(Icons.search)),
                 ],
                 indicatorColor: Colors.white,
               ),
