@@ -96,20 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/chain.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Stack(
+        body: Stack(
+          fit: StackFit.expand,
             children: <Widget>[
-              Container(
-                child: Text('data')
-              ),
+              Image(
+                image: AssetImage('assets/images/chain.jpg'),
+                fit: BoxFit.fill,
+              )
             ],
-          ),
         ),
         // Bottom Navigator Starts here!!
 
