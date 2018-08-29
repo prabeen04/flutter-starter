@@ -104,12 +104,25 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.cover,
             ),
             Container(
-              margin: const EdgeInsets.fromLTRB(0.0, 10.0, 20.0, 0.0),
+                margin: const EdgeInsets.fromLTRB(0.0, 10.0, 20.0, 0.0),
                 alignment: AlignmentDirectional.topEnd,
                 child: Text(
-                  'Welcome',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 28.0),
-                ))
+                  'Welcome Prabeen',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.0),
+                )),
+            Container(
+                margin: const EdgeInsets.fromLTRB(0.0, 10.0, 20.0, 0.0),
+                alignment: AlignmentDirectional.center,
+                child: Text(
+                  '20:20',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 48.0),
+                )),
           ],
         ),
         // Bottom Navigator Starts here!!
