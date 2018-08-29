@@ -9,23 +9,23 @@ class ProfileScreen extends StatelessWidget {
             ),
             body: DefaultTabController(
           length: 3,
-          child: new Scaffold(
-            appBar: new AppBar(
+          child: Scaffold(
+            appBar: AppBar(
               actions: <Widget>[],
-              title: new TabBar(
+              title: TabBar(
                 tabs: [
-                  new Tab(icon: new Icon(Icons.directions_car)),
-                  new Tab(icon: new Icon(Icons.directions_transit)),
-                  new Tab(icon: new Icon(Icons.directions_bike)),
+                  Tab(icon: Icon(Icons.directions_car)),
+                  Tab(icon: Icon(Icons.directions_transit)),
+                  Tab(icon: Icon(Icons.directions_bike)),
                 ],
                 indicatorColor: Colors.white,
               ),
             ),
-            body: new TabBarView(
+            body: TabBarView(
               children: [
-                new Icon(Icons.directions_car,size: 50.0,),
-                new Icon(Icons.directions_transit,size: 50.0,),
-                new Icon(Icons.directions_bike,size: 50.0,),
+                Icon(Icons.directions_car,size: 50.0,),
+                Icon(Icons.directions_transit,size: 50.0,),
+                Icon(Icons.directions_bike,size: 50.0,),
               ],
             ),
           ),
