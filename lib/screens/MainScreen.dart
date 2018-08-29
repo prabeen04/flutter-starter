@@ -22,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
     MessagesScreen(),
     ChatScreen(),
     PlaceholderWidget(Colors.green),
-    PlaceholderWidget(Colors.lightBlueAccent)
+    ProfileScreen()
   ];
   void onTabTapped(int index) {
     setState(() {

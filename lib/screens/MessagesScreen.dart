@@ -26,7 +26,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Scaffold(
+      child: Scaffold(      
         appBar: AppBar(
           title: Text("Messages"),
         ),
@@ -39,14 +39,16 @@ class _MessagesScreenState extends State<MessagesScreen> {
                 if (snapshot.hasData) {
                   return ListView.builder(
                     itemCount: snapshot.data.length,
-                    itemBuilder: (BuildContext context, int index) {
+                   itemBuilder: (BuildContext context, int index) {
                       return ListTile(
+                        trailing: Icon(Icons.chevron_right),
+                        contentPadding: const EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 8.0),
                         leading: CircleAvatar(
                           backgroundColor: Colors.blueAccent,
                           child: Text(snapshot.data[index]['title'][0].toString().toUpperCase(), 
                           style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),),
                         ),
-                        title: Text(snapshot.data[index]['title']),
+                        title: Text(snapshot.data[index]['title'].toString().toUpperCase()),
                       );
                     },
                   );
