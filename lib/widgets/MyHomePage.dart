@@ -96,17 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: Center(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Image.network(
-                'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
-              ),
-            ],
-          ),
-        ),
-
+        body: Text('Home page  body'),
         // Bottom Navigator Starts here!!
 
         // App level floating action Button!!
