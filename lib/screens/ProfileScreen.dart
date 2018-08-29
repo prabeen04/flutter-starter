@@ -16,13 +16,7 @@ class ProfileScreen extends StatelessWidget {
                 indicatorColor: Colors.white,
               ),
             ),
-            body: new TabBarView(
-              children: [
-                new Icon(Icons.directions_car,size: 50.0,),
-                new Icon(Icons.directions_transit,size: 50.0,),
-                new Icon(Icons.directions_bike,size: 50.0,),
-              ],
-        ),
-    );
+            body: Text('kdjf'),
+        );
   }
 }
