@@ -6,7 +6,10 @@ class NotificationScreen extends StatelessWidget {
     return Container(
       child: Scaffold(
         appBar: AppBar(title: Text('Notifications'),),
+      body: Center(
+        child: Text('Notification Screen'),
       ),
+      )
     );
   }
 }
