@@ -5,6 +5,7 @@ import './ProfileScreen.dart';
 import './NewsScreen.dart';
 import './ChatScreen.dart';
 import './SettingsScreen.dart';
+import './NotificationScreen.dart';
 import '../widgets/placeholder.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
     MyHomePage(),
     MessagesScreen(),
     ChatScreen(),
-    PlaceholderWidget(Colors.green),
+    NotificationScreen(),
     SettingsScreen()
   ];
   void onTabTapped(int index) {
