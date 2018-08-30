@@ -6,14 +6,17 @@ class ProfileScreen extends StatefulWidget {
   _ProfileScreenState createState() => _ProfileScreenState();
 }
 class _ProfileScreenState extends State<ProfileScreen> {
+  final String _title = 'Profile';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Profile'),
+          title: Text(_title),
             ),
             body: Container(
-              child: ,
+              child: Center(
+                child: Text(_title)
+              ),
             ),
         );
   }
