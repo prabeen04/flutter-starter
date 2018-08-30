@@ -28,6 +28,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
           title: Text(_title),
             ),
+            floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            Navigator.of(context).pushNamed("/add").then((_) {
+              refreshContacts();
+            });
+          }),
             body:SafeArea(
         child: _contacts != null
             ? ListView.builder(
