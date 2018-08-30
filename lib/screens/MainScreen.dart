@@ -23,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
     MessagesScreen(),
     ChatScreen(),
     PlaceholderWidget(Colors.green),
-    ProfileScreen()
+    SettingsScreen()
   ];
   void onTabTapped(int index) {
     setState(() {
@@ -98,7 +98,9 @@ class _MainScreenState extends State<MainScreen> {
             title: Text('Notification'),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text('Profile'))
+              icon: Icon(Icons.settings),
+               title: Text('Settings'
+               ))
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
+class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             body: TabBarView(
               children: [
-                Icon(Icons.directions_car,size: 50.0,),
+                Icon(Icons.sd_card,size: 50.0,),
                 Icon(Icons.directions_transit,size: 50.0,),
                 Icon(Icons.directions_bike,size: 50.0,),
               ],
