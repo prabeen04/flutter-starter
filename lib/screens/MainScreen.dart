@@ -4,6 +4,7 @@ import './MessagesScreen.dart';
 import './ProfileScreen.dart';
 import './NewsScreen.dart';
 import './ChatScreen.dart';
+import './SettingsScreen.dart';
 import '../widgets/placeholder.dart';
 
 class MainScreen extends StatefulWidget {
