@@ -7,6 +7,20 @@ class ProfileScreen extends StatefulWidget {
 }
 class _ProfileScreenState extends State<ProfileScreen> {
   final String _title = 'Profile';
+  Iterable<Contact> _contacts;
+  @override
+  initState() {
+    super.initState();
+    refreshContacts();
+  }
+
+  refreshContacts() async {
+    var contacts = await ContactsService.getContacts();
+    setState(() {
+      _contacts = contacts;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
