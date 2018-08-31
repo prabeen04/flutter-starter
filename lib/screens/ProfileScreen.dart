@@ -16,22 +16,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   initState() {
     super.initState();
+    print(Permission.values);
     initplatform();
     refreshContacts();
   }
 
   requestPermission() async {
-    bool res = await SimplePermissions.requestPermission(permission);
+    bool res = await SimplePermissions.requestPermission(Permission.ReadContacts);
     print("permission request result is " + res.toString());
   }
 
   checkPermission() async {
-    bool res = await SimplePermissions.checkPermission(permission);
+    bool res = await SimplePermissions.checkPermission(Permission.ReadContacts);
     print("permission is " + res.toString());
   }
 
   getPermissionStatus() async {
-    final res = await SimplePermissions.getPermissionStatus(permission);
+    final res = await SimplePermissions.getPermissionStatus(Permission.ReadContacts);
     print("permission status is " + res.toString());
   }
 
