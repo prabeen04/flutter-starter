@@ -8,11 +8,6 @@ class ProfileScreen extends StatefulWidget {
   _ProfileScreenState createState() => _ProfileScreenState();
 }
 
-class _LoginData {
-  String email = '';
-  String password = '';
-}
-
 class _ProfileScreenState extends State<ProfileScreen> {
   final String _title = 'Profile';
   String _platformVersion;
