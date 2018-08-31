@@ -8,10 +8,14 @@ class ProfileScreen extends StatefulWidget {
   _ProfileScreenState createState() => _ProfileScreenState();
 }
 
+class _LoginData {
+  String email = '';
+  String password = '';
+}
+
 class _ProfileScreenState extends State<ProfileScreen> {
   final String _title = 'Profile';
   String _platformVersion;
-  bool _isPermitted;
   Permission permission;
   Iterable<Contact> _contacts;
   @override
@@ -21,7 +25,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   requestPermission() async {
-    bool res = await SimplePermissions.requestPermission(Permission.ReadContacts);
+    bool res =
+        await SimplePermissions.requestPermission(Permission.ReadContacts);
     print("permission request result is " + res.toString());
     checkPermission();
   }
