@@ -19,21 +19,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
     initplatform();
     refreshContacts();
   }
+
 //its just for getting the platform version
-initplatform() async {
-String platfrom;
-try {
-platfrom = await SimplePermissions.platformVersion;
-} on PlatformException {
-platfrom = "platform not found";
-}
+  initplatform() async {
+    String platfrom;
+    try {
+      platfrom = await SimplePermissions.platformVersion;
+      // print(_platformVersion);
+    } on PlatformException {
+      platfrom = "platform not found";
+    }
 //if object is removed from the tree.
-if (!mounted) return;
+    if (!mounted) return;
 //otherwise set the platform to our _platformversion global variable
-setState(() => _platformVersion = platfrom);
-}
+    setState(() => _platformVersion = platfrom);
+  }
+
   refreshContacts() async {
     var contacts = await ContactsService.getContacts();
+    print(_platformVersion);
     print(contacts);
     setState(() {
       _contacts = contacts;
