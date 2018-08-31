@@ -15,10 +15,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Permission permission;
   Iterable<Contact> _contacts;
   @override
-  initState () async {
+  initState () {
     super.initState();
-    var test =  await checkPermission();
-    test ? initplatform() :debugPrint('Not Permitted') ;
+    checkPermission();
     refreshContacts();
   }
 
@@ -28,7 +27,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   checkPermission() async {
+    print('Inside checkPermission()');
     bool res = await SimplePermissions.checkPermission(Permission.ReadContacts);
+    initplatform();
     return res;
   }
 
