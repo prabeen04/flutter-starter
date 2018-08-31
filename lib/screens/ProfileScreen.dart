@@ -20,6 +20,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
     refreshContacts();
   }
 
+  requestPermission() async {
+    bool res = await SimplePermissions.requestPermission(permission);
+    print("permission request result is " + res.toString());
+  }
+
+  checkPermission() async {
+    bool res = await SimplePermissions.checkPermission(permission);
+    print("permission is " + res.toString());
+  }
+
+  getPermissionStatus() async {
+    final res = await SimplePermissions.getPermissionStatus(permission);
+    print("permission status is " + res.toString());
+  }
+
 //its just for getting the platform version
   initplatform() async {
     String platfrom;
