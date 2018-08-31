@@ -18,7 +18,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   initState () {
     super.initState();
     checkPermission();
-    refreshContacts();
   }
 
   requestPermission() async {
@@ -29,8 +28,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   checkPermission() async {
     print('Inside checkPermission()');
     bool res = await SimplePermissions.checkPermission(Permission.ReadContacts);
-    initplatform();
-    return res;
+    print(res);
+    if(res = true){
+      debugPrint('Permission granted');
+    }else{
+      debugPrint('No Permission');
+    }
   }
 
   getPermissionStatus() async {
