@@ -36,6 +36,16 @@ class _ChatScreenState extends State<ChatScreen> {
 
     return null;
   }
+  void submit() {
+    // First validate form.
+    if (this._formKey.currentState.validate()) {
+      _formKey.currentState.save(); // Save our form now.
+
+      print('Printing the login data.');
+      print('Email: ${_data.email}');
+      print('Password: ${_data.password}');
+    }
+  }
   @override
   Widget build(BuildContext context) {
         final Size screenSize = MediaQuery.of(context).size;
