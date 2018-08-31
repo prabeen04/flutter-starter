@@ -16,6 +16,9 @@ class ChatScreen extends StatelessWidget {
           children: <Widget>[
             TextField(
               keyboardType: TextInputType.text,
+              decoration: new InputDecoration(
+                  labelText: 'E-mail Address'
+                ),
               // controller: _textController,
               maxLines: null,
             ),
