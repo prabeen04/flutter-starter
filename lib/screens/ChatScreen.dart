@@ -8,34 +8,21 @@ class ChatScreen extends StatefulWidget {
   }
 }
 
+class _LoginData {
+  String email = '';
+  String password = '';
+}
+
 class _ChatScreenState extends State<ChatScreen> {
+  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  _LoginData _data = new _LoginData();
   @override
   Widget build(BuildContext context) {
     return Container(
         child: Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(title: Text('Chats')),
-      body: Container(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            TextField(
-              keyboardType: TextInputType.text,
-              decoration: new InputDecoration(
-                  labelText: 'E-mail Address'
-                ),
-              // controller: _textController,
-              maxLines: null,
-            ),
-            IconButton(
-              icon: Icon(Icons.send),
-              onPressed: () {},
-            )
-          ],
-        )),
-      ),
+      body: 
     ));
   }
 }
