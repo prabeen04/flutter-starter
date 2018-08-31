@@ -17,6 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   initState() {
     super.initState();
     print(Permission.values);
+    checkPermission();
     initplatform();
     refreshContacts();
   }
