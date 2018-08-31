@@ -11,14 +11,14 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   final String _title = 'Profile';
   String _platformVersion;
+  bool _isPermitted;
   Permission permission;
   Iterable<Contact> _contacts;
   @override
-  initState() {
+  initState () async {
     super.initState();
-    print(Permission.values);
-    checkPermission();
-    initplatform();
+    var test =  await checkPermission();
+    test ? initplatform() :debugPrint('Not Permitted') ;
     refreshContacts();
   }
 
@@ -29,7 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   checkPermission() async {
     bool res = await SimplePermissions.checkPermission(Permission.ReadContacts);
-    print("permission is " + res.toString());
+    return res;
   }
 
   getPermissionStatus() async {
@@ -39,6 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
 //its just for getting the platform version
   initplatform() async {
+    print('Inside initPlatform');
     String platfrom;
     try {
       platfrom = await SimplePermissions.platformVersion;
