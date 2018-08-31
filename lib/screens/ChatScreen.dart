@@ -61,7 +61,6 @@ class _ChatScreenState extends State<ChatScreen> {
               new TextFormField(
                 keyboardType: TextInputType.emailAddress, // Use email input type for emails.
                 decoration: new InputDecoration(
-                  hintText: 'you@example.com',
                   labelText: 'E-mail Address'
                 ),
                 validator: this._validateEmail,
@@ -72,7 +71,6 @@ class _ChatScreenState extends State<ChatScreen> {
               new TextFormField(
                 obscureText: true, // Use secure text for passwords.
                 decoration: new InputDecoration(
-                  hintText: 'Password',
                   labelText: 'Enter your password'
                 ),
                 validator: this._validatePassword,
