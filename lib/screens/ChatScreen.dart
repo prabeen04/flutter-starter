@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:validate/validate.dart';
 
 class ChatScreen extends StatefulWidget {
   // final TextEditingController _textController ;
@@ -16,8 +17,29 @@ class _LoginData {
 class _ChatScreenState extends State<ChatScreen> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   _LoginData _data = new _LoginData();
+  String _validateEmail(String value) {
+    // If empty value, the isEmail function throw a error.
+    // So I changed this function with try and catch.
+    try {
+      Validate.isEmail(value);
+    } catch (e) {
+      return 'The E-mail Address must be a valid email address.';
+    }
+
+    return null;
+  }
+
+  String _validatePassword(String value) {
+    if (value.length < 8) {
+      return 'The Password must be at least 8 characters.';
+    }
+
+    return null;
+  }
   @override
   Widget build(BuildContext context) {
+        final Size screenSize = MediaQuery.of(context).size;
+
     return Container(
         child: Scaffold(
       resizeToAvoidBottomPadding: false,
