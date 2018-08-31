@@ -6,7 +6,7 @@ dependencies:
     sdk: flutter
   contacts_service: ^0.0.8
   simple_permissions: ^0.1.6
-  validate:
+  validate: ^1.7.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
