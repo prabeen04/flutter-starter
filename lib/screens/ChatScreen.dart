@@ -57,6 +57,7 @@ class _ChatScreenState extends State<ChatScreen> {
             resizeToAvoidBottomPadding: false,
             appBar: AppBar(title: Text('Chats')),
             body: Container(
+              margin: const EdgeInsets.all(20.0),
                 child: Form(
               key: this._formKey,
               child: ListView(
