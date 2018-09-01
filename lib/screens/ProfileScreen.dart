@@ -10,7 +10,6 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final String _title = 'Profile';
-  String _platformVersion;
   Permission permission;
   Iterable<Contact> _contacts;
   @override
@@ -43,22 +42,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final res =
         await SimplePermissions.getPermissionStatus(Permission.ReadContacts);
     print("permission status is " + res.toString());
-  }
-
-//its just for getting the platform version
-  initplatform() async {
-    print('Inside initPlatform');
-    String platfrom;
-    try {
-      platfrom = await SimplePermissions.platformVersion;
-      // print(_platformVersion);
-    } on PlatformException {
-      platfrom = "platform not found";
-    }
-//if object is removed from the tree.
-    if (!mounted) return;
-//otherwise set the platform to our _platformversion global variable
-    setState(() => _platformVersion = platfrom);
   }
 
   refreshContacts() async {
