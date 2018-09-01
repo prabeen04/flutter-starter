@@ -5,7 +5,7 @@ class ChatScreen extends StatefulWidget {
   // final TextEditingController _textController ;
   @override
   _ChatScreenState createState() {
-    return new _ChatScreenState();
+    return _ChatScreenState();
   }
 }
 
@@ -15,8 +15,8 @@ class _LoginData {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  _LoginData _data = new _LoginData();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  _LoginData _data = _LoginData();
   String _validateEmail(String value) {
     // If empty value, the isEmail function throw a error.
     // So I changed this function with try and catch.
@@ -54,13 +54,13 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(title: Text('Chats')),
-      body: new Form(
+      body: Form(
           key: this._formKey,
-          child: new ListView(
+          child: ListView(
             children: <Widget>[
-              new TextFormField(
+              TextFormField(
                 keyboardType: TextInputType.emailAddress, // Use email input type for emails.
-                decoration: new InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'E-mail Address'
                 ),
                 validator: this._validateEmail,
@@ -68,9 +68,9 @@ class _ChatScreenState extends State<ChatScreen> {
                   this._data.email = value;
                 }
               ),
-              new TextFormField(
+              TextFormField(
                 obscureText: true, // Use secure text for passwords.
-                decoration: new InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Enter your password'
                 ),
                 validator: this._validatePassword,
@@ -78,19 +78,19 @@ class _ChatScreenState extends State<ChatScreen> {
                   this._data.password = value;
                 }
               ),
-              new Container(
+              Container(
                 width: screenSize.width,
-                child: new RaisedButton(
-                  child: new Text(
+                child: RaisedButton(
+                  child: Text(
                     'Login',
-                    style: new TextStyle(
+                    style: TextStyle(
                       color: Colors.white
                     ),
                   ),
                   onPressed: this.submit,
                   color: Colors.blue,
                 ),
-                margin: new EdgeInsets.only(
+                margin: EdgeInsets.only(
                   top: 20.0
                 ),
               )
