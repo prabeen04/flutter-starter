@@ -28,14 +28,12 @@ class _FormScreenState extends State<FormScreen> {
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.person),
-                      hintText: 'Enter your first and last name',
                       labelText: 'Name',
                     ),
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.calendar_today),
-                      hintText: 'Enter your date of birth',
                       labelText: 'Dob',
                     ),
                     keyboardType: TextInputType.datetime,
@@ -43,7 +41,6 @@ class _FormScreenState extends State<FormScreen> {
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.phone),
-                      hintText: 'Enter a phone number',
                       labelText: 'Phone',
                     ),
                     keyboardType: TextInputType.phone,
@@ -54,7 +51,6 @@ class _FormScreenState extends State<FormScreen> {
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.email),
-                      hintText: 'Enter a email address',
                       labelText: 'Email',
                     ),
                     keyboardType: TextInputType.emailAddress,
