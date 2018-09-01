@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
               ListTile(
                 title: Text('Profile'),
-                trailing: Icon(Icons.account_circle),
+                trailing: Icon(Icons.person),
                 onTap: () {
 
                   Navigator.pop(context);

@@ -55,7 +55,7 @@ class _MainScreenState extends State<MainScreen> {
                 )),
             ListTile(
               title: Text('Profile'),
-              trailing: Icon(Icons.account_circle),
+              trailing: Icon(Icons.person),
               onTap: () {
                 // Update the state of the app
                 // ...
