@@ -46,7 +46,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   refreshContacts() async {
     var contacts = await ContactsService.getContacts();
-    print(_platformVersion);
     print(contacts);
     setState(() {
       _contacts = contacts;
