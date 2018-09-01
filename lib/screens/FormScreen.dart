@@ -18,7 +18,9 @@ class _FormScreenState extends State<FormScreen> {
   Future _chooseDate(BuildContext context, String initialDateString) async {
     var now = new DateTime.now();
     var initialDate = convertToDate(initialDateString) ?? now;
-    initialDate = (initialDate.year >= 1900 && initialDate.isBefore(now) ? initialDate : now);
+    initialDate = (initialDate.year >= 1900 && initialDate.isBefore(now)
+        ? initialDate
+        : now);
 
     var result = await showDatePicker(
         context: context,
@@ -34,13 +36,12 @@ class _FormScreenState extends State<FormScreen> {
   }
 
   DateTime convertToDate(String input) {
-    try 
-    {
+    try {
       var d = new DateFormat.yMd().parseStrict(input);
       return d;
     } catch (e) {
       return null;
-    }    
+    }
   }
 
   @override
@@ -57,12 +58,13 @@ class _FormScreenState extends State<FormScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 children: <Widget>[
                   ListTile(
-                    title: Text('Create Contact',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueGrey
-                    ),),
+                    title: Text(
+                      'Create Contact',
+                      style: TextStyle(
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey),
+                    ),
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
@@ -70,13 +72,25 @@ class _FormScreenState extends State<FormScreen> {
                       labelText: 'Name',
                     ),
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      icon: const Icon(Icons.calendar_today),
-                      labelText: 'Dob',
-                    ),
-                    keyboardType: TextInputType.datetime,
-                  ),
+                  new Row(children: <Widget>[
+                    new Expanded(
+                        child: new TextFormField(
+                      decoration: new InputDecoration(
+                        icon: const Icon(Icons.calendar_today),
+                        hintText: 'Enter your date of birth',
+                        labelText: 'Dob',
+                      ),
+                      controller: _controller,
+                      keyboardType: TextInputType.datetime,
+                    )),
+                    new IconButton(
+                      icon: new Icon(Icons.more_horiz),
+                      tooltip: 'Choose date',
+                      onPressed: (() {
+                        _chooseDate(context, _controller.text);
+                      }),
+                    )
+                  ]),
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.phone),
