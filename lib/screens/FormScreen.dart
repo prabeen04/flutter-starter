@@ -25,6 +25,14 @@ class _FormScreenState extends State<FormScreen> {
               child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 children: <Widget>[
+                  ListTile(
+                    title: Text('Create Contact',
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueGrey
+                    ),),
+                  ),
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.person),
