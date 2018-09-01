@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/contact.dart';
 
 class FormScreen extends StatefulWidget {
   @override
@@ -6,11 +7,90 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
+  Contact newContact = new Contact();
+  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
+  String _color = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Form')),
-      body: Container(child: Center(child: Text('Form Screens'))),
+      body: SafeArea(
+          top: false,
+          bottom: false,
+          child: new Form(
+              key: _formKey,
+              autovalidate: true,
+              child: new ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                children: <Widget>[
+                  new TextFormField(
+                    decoration: const InputDecoration(
+                      icon: const Icon(Icons.person),
+                      hintText: 'Enter your first and last name',
+                      labelText: 'Name',
+                    ),
+                  ),
+                  new TextFormField(
+                    decoration: const InputDecoration(
+                      icon: const Icon(Icons.calendar_today),
+                      hintText: 'Enter your date of birth',
+                      labelText: 'Dob',
+                    ),
+                    keyboardType: TextInputType.datetime,
+                  ),
+                  new TextFormField(
+                    decoration: const InputDecoration(
+                      icon: const Icon(Icons.phone),
+                      hintText: 'Enter a phone number',
+                      labelText: 'Phone',
+                    ),
+                    keyboardType: TextInputType.phone,
+                    inputFormatters: [
+                      // WhitelistingTextInputFormatter.digitsOnly,
+                    ],
+                  ),
+                  new TextFormField(
+                    decoration: const InputDecoration(
+                      icon: const Icon(Icons.email),
+                      hintText: 'Enter a email address',
+                      labelText: 'Email',
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  new InputDecorator(
+                    decoration: const InputDecoration(
+                      icon: const Icon(Icons.color_lens),
+                      labelText: 'Color',
+                    ),
+                    isEmpty: _color == '',
+                    child: new DropdownButtonHideUnderline(
+                      child: new DropdownButton<String>(
+                        value: _color,
+                        isDense: true,
+                        onChanged: (String newValue) {
+                          setState(() {
+                            _color = newValue;
+                          });
+                        },
+                        items: _colors.map((String value) {
+                          return new DropdownMenuItem<String>(
+                            value: value,
+                            child: new Text(value),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ),
+                  new Container(
+                      padding: const EdgeInsets.only(left: 40.0, top: 20.0),
+                      child: new RaisedButton(
+                        child: const Text('Submit'),
+                        onPressed: null,
+                      )),
+                ],
+              ))),
     );
   }
 }
