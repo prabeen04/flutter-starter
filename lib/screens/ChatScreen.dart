@@ -8,10 +8,13 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Chat Screen')
+    return  Container(
+      child: Scaffold(
+        appBar: AppBar(title: Text('Chat'),),
+      body: Center(
+        child: Text('Chat Screen'),
       ),
+      )
     );
   }
 }

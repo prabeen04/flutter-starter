@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/ProfileScreen.dart';
 import '../screens/NewsScreen.dart';
+import '../screens/FormScreen.dart';
 import '../screens/NotificationScreen.dart';
 import './FABIcon.dart';
 
@@ -93,6 +94,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       builder: (BuildContext context) => NewsScreen()));
                 },
               ),
+            ListTile(
+              title: Text('Form'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => FormScreen()));
+              },
+            ),
             ],
           ),
         ),
