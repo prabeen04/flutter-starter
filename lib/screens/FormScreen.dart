@@ -19,20 +19,20 @@ class _FormScreenState extends State<FormScreen> {
       body: SafeArea(
           top: false,
           bottom: false,
-          child: new Form(
+          child: Form(
               key: _formKey,
               autovalidate: true,
-              child: new ListView(
+              child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 children: <Widget>[
-                  new TextFormField(
+                  TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.person),
                       hintText: 'Enter your first and last name',
                       labelText: 'Name',
                     ),
                   ),
-                  new TextFormField(
+                  TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.calendar_today),
                       hintText: 'Enter your date of birth',
@@ -40,7 +40,7 @@ class _FormScreenState extends State<FormScreen> {
                     ),
                     keyboardType: TextInputType.datetime,
                   ),
-                  new TextFormField(
+                  TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.phone),
                       hintText: 'Enter a phone number',
@@ -51,7 +51,7 @@ class _FormScreenState extends State<FormScreen> {
                       // WhitelistingTextInputFormatter.digitsOnly,
                     ],
                   ),
-                  new TextFormField(
+                  TextFormField(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.email),
                       hintText: 'Enter a email address',
@@ -59,14 +59,14 @@ class _FormScreenState extends State<FormScreen> {
                     ),
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  new InputDecorator(
+                  InputDecorator(
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.color_lens),
                       labelText: 'Color',
                     ),
                     isEmpty: _color == '',
-                    child: new DropdownButtonHideUnderline(
-                      child: new DropdownButton<String>(
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
                         value: _color,
                         isDense: true,
                         onChanged: (String newValue) {
@@ -75,17 +75,17 @@ class _FormScreenState extends State<FormScreen> {
                           });
                         },
                         items: _colors.map((String value) {
-                          return new DropdownMenuItem<String>(
+                          return DropdownMenuItem<String>(
                             value: value,
-                            child: new Text(value),
+                            child: Text(value),
                           );
                         }).toList(),
                       ),
                     ),
                   ),
-                  new Container(
+                  Container(
                       padding: const EdgeInsets.only(left: 40.0, top: 20.0),
-                      child: new RaisedButton(
+                      child: RaisedButton(
                         child: const Text('Submit'),
                         onPressed: null,
                       )),
