@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../widgets/MyHomePage.dart';
-import './MessagesScreen.dart';
+
 import './ProfileScreen.dart';
 import './NewsScreen.dart';
+import './FormScreen.dart';
+import '../widgets/MyHomePage.dart';
+import './MessagesScreen.dart';
 import './ChatScreen.dart';
 import './SettingsScreen.dart';
 import './NotificationScreen.dart';
@@ -68,6 +70,14 @@ class _MainScreenState extends State<MainScreen> {
                 Navigator.pop(context);
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) => NewsScreen()));
+              },
+            ),
+            ListTile(
+              title: Text('Form'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => FormScreen()));
               },
             ),
           ],

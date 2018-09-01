@@ -9,7 +9,9 @@ class _FormScreenState extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child: Center(
+        child: Text('Form Screen'),
+      ),
     );
   }
 }
