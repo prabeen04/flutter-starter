@@ -55,6 +55,7 @@ class _MainScreenState extends State<MainScreen> {
                 )),
             ListTile(
               title: Text('Profile'),
+              trailing: Icon(Icons.account_circle),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -66,6 +67,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ListTile(
               title: Text('News'),
+              trailing: Icon(Icons.explore),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(MaterialPageRoute(
@@ -74,6 +76,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ListTile(
               title: Text('Form'),
+              trailing: Icon(Icons.edit),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(MaterialPageRoute(

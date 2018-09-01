@@ -77,10 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
               ListTile(
                 title: Text('Profile'),
+                trailing: Icon(Icons.account_circle),
                 onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
+
                   Navigator.pop(context);
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (BuildContext context) => ProfileScreen()));
@@ -88,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 title: Text('News'),
+                trailing: Icon(Icons.explore),
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.of(context).push(MaterialPageRoute(
@@ -96,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ListTile(
               title: Text('Form'),
+              trailing: Icon(Icons.edit),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(MaterialPageRoute(

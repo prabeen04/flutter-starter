@@ -8,10 +8,9 @@ class FormScreen extends StatefulWidget {
 class _FormScreenState extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Form Screen'),
-      ),
+    return Scaffold(
+      appBar: AppBar(title: Text('Form')),
+      body: Container(child: Center(child: Text('Form Screens'))),
     );
   }
 }
