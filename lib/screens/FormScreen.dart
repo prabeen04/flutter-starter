@@ -77,6 +77,7 @@ class _FormScreenState extends State<FormScreen> {
                       icon: const Icon(Icons.person),
                       labelText: 'Name',
                     ),
+                    onSaved: (val) => newContact.name = val,
                   ),
                   new Row(children: <Widget>[
                     new Expanded(
@@ -88,6 +89,7 @@ class _FormScreenState extends State<FormScreen> {
                       controller: _controller,
                       keyboardType: TextInputType.datetime,
                       validator: (val) => isValidDob(val) ? null : 'Not a valid date',
+                      onSaved: (val) => newContact.dob = convertToDate(val),
                     )),
                     new IconButton(
                       icon: new Icon(Icons.more_horiz),
