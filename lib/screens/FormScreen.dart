@@ -9,12 +9,13 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
+
+  String _color = '';
+  List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
   Contact newContact = new Contact();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
-  String _color = '';
-
   final TextEditingController _controller = new TextEditingController();
+
   Future _chooseDate(BuildContext context, String initialDateString) async {
     var now = new DateTime.now();
     var initialDate = convertToDate(initialDateString) ?? now;
