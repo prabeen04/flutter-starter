@@ -88,7 +88,8 @@ class _FormScreenState extends State<FormScreen> {
                       ),
                       controller: _controller,
                       keyboardType: TextInputType.datetime,
-                      validator: (val) => isValidDob(val) ? null : 'Not a valid date',
+                      validator: (val) =>
+                          isValidDob(val) ? null : 'Not a valid date',
                       onSaved: (val) => newContact.dob = convertToDate(val),
                     )),
                     new IconButton(
@@ -108,6 +109,7 @@ class _FormScreenState extends State<FormScreen> {
                     inputFormatters: [
                       // WhitelistingTextInputFormatter.digitsOnly,
                     ],
+                    onSaved: (val) => newContact.phone = val,
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
@@ -115,6 +117,7 @@ class _FormScreenState extends State<FormScreen> {
                       labelText: 'Email',
                     ),
                     keyboardType: TextInputType.emailAddress,
+                    onSaved: (val) => newContact.email = val,
                   ),
                   InputDecorator(
                     decoration: const InputDecoration(
@@ -128,6 +131,7 @@ class _FormScreenState extends State<FormScreen> {
                         isDense: true,
                         onChanged: (String newValue) {
                           setState(() {
+                            newContact.favoriteColor = newValue;
                             _color = newValue;
                           });
                         },
