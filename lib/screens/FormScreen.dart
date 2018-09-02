@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:intl/intl.dart';
 import '../models/contact.dart';
-import '../services/contact_service.dart';
+// import '../services/contact_service.dart';
 
 class FormScreen extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _FormScreenState extends State<FormScreen> {
   List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
   Contact newContact = new Contact();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final TextEditingController _controller = new TextEditingController();
 
   Future _chooseDate(BuildContext context, String initialDateString) async {
@@ -79,9 +79,9 @@ class _FormScreenState extends State<FormScreen> {
       print('Favorite Color: ${newContact.favoriteColor}');
       print('========================================');
       print('Submitting to back end...');
-      var contactService = new ContactService();
-      contactService.createContact(newContact).then((value) =>
-          showMessage('New contact created for ${value.name}!', Colors.blue));
+      // var contactService = new ContactService();
+      // contactService.createContact(newContact).then((value) =>
+      //     showMessage('New contact created for ${value.name}!', Colors.blue));
     }
   }
 
@@ -159,6 +159,9 @@ class _FormScreenState extends State<FormScreen> {
                       labelText: 'Email',
                     ),
                     keyboardType: TextInputType.emailAddress,
+                    validator: (value) => isValidEmail(value)
+                        ? null
+                        : 'Please enter a valid email address',
                     onSaved: (val) => newContact.email = val,
                   ),
                   InputDecorator(
