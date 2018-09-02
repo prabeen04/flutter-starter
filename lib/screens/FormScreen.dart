@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 import '../models/contact.dart';
 import '../services/contact_service.dart';
+
 class FormScreen extends StatefulWidget {
   @override
   _FormScreenState createState() => _FormScreenState();
@@ -50,10 +51,18 @@ class _FormScreenState extends State<FormScreen> {
     var d = convertToDate(dob);
     return d != null && d.isBefore(new DateTime.now());
   }
-bool isValidEmail(String input) {
-    final RegExp regex = new RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+
+  bool isValidEmail(String input) {
+    final RegExp regex = new RegExp(
+        r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
     return regex.hasMatch(input);
   }
+
+  bool isValidPhoneNumber(String input) {
+    final RegExp regex = new RegExp(r'^\(\d\d\d\)\d\d\d\-\d\d\d\d$');
+    return regex.hasMatch(input);
+  }
+
   void _submitForm() {
     final FormState form = _formKey.currentState;
 
@@ -109,6 +118,8 @@ bool isValidEmail(String input) {
                       icon: const Icon(Icons.person),
                       labelText: 'Name',
                     ),
+                    // inputFormatters: [new LengthLimitingTextInputFormatter(30)],
+                    validator: (val) => val.isEmpty ? 'Name is required' : null,
                     onSaved: (val) => newContact.name = val,
                   ),
                   new Row(children: <Widget>[
@@ -138,9 +149,8 @@ bool isValidEmail(String input) {
                       labelText: 'Phone',
                     ),
                     keyboardType: TextInputType.phone,
-                    inputFormatters: [
-                      // WhitelistingTextInputFormatter.digitsOnly,
-                    ],
+                    // inputFormatters: [new LengthLimitingTextInputFormatter(30)],
+                    validator: (val) => val.isEmpty ? 'Name is required' : null,
                     onSaved: (val) => newContact.phone = val,
                   ),
                   TextFormField(
