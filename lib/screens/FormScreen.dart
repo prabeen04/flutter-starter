@@ -122,7 +122,7 @@ class _FormScreenState extends State<FormScreen> {
                     validator: (val) => val.isEmpty ? 'Name is required' : null,
                     onSaved: (val) => newContact.name = val,
                   ),
-                  new Row(children: <Widget>[
+                  Row(children: <Widget>[
                     new Expanded(
                         child: new TextFormField(
                       decoration: new InputDecoration(
@@ -192,7 +192,10 @@ class _FormScreenState extends State<FormScreen> {
                   Container(
                       padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                       child: RaisedButton(
-                        child: const Text('Submit'),
+                        color: Colors.blueAccent,
+                        child: const Text('Submit', style: TextStyle(
+                          color: Colors.white,
+                        ),),
                         onPressed: _submitForm,
                       )),
                 ],
