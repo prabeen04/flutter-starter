@@ -68,6 +68,10 @@ void _submitForm() {
       print('TODO - we will write the submission part next...');
     }
   }
+    void showMessage(String message, [MaterialColor color = Colors.red]) {
+    _scaffoldKey.currentState
+        .showSnackBar(new SnackBar(backgroundColor: color, content: new Text(message)));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
