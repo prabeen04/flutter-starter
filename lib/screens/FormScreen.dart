@@ -77,8 +77,7 @@ class _FormScreenState extends State<FormScreen> {
                         child: new TextFormField(
                       decoration: new InputDecoration(
                         icon: const Icon(Icons.calendar_today),
-                        hintText: 'Enter your date of birth',
-                        labelText: 'Dob',
+                        labelText: 'Date of Birth',
                       ),
                       controller: _controller,
                       keyboardType: TextInputType.datetime,
