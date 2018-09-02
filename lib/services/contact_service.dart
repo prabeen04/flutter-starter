@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:async';
-import 'dart:convert' as JSON;
+import 'dart:convert';
 import 'package:intl/intl.dart';
 
 import '../models/contact.dart';
@@ -11,9 +11,9 @@ class ContactService {
 
   Future<Contact> createContact(Contact contact) async {
     try {
-      String json = _toJson(contact);
+      String _json = _toJson(contact);
       final response =
-          await http.post(_serviceUrl, headers: _headers, body: json);
+          await http.post(_serviceUrl, headers: _headers, body: _json);
       var c = _fromJson(response.body);
       return c;
     } catch (e) {
@@ -23,8 +23,8 @@ class ContactService {
     }
   }
 
-  Contact _fromJson(String json) {
-    Map<String, dynamic> map = JSON.decode(json);
+  Contact _fromJson(String __json) {
+    Map<String, dynamic> map = json.decode(__json);
     var contact = new Contact();
     contact.name = map['name'];
     contact.dob = new DateFormat.yMd().parseStrict(map['dob']);
@@ -41,7 +41,7 @@ class ContactService {
     mapData["phone"] = contact.phone;
     mapData["email"] = contact.email;
     mapData["favoriteColor"] = contact.favoriteColor;
-    String json = JSON.encode(mapData);
-    return json;
+    String __json = json.encode(mapData);
+    return __json;
   }
 }
