@@ -49,7 +49,25 @@ class _FormScreenState extends State<FormScreen> {
     var d = convertToDate(dob);
     return d != null && d.isBefore(new DateTime.now());
   }
+void _submitForm() {
+    final FormState form = _formKey.currentState;
 
+    if (!form.validate()) {
+      showMessage('Form is not valid!  Please review and correct.');
+    } else {
+      form.save(); //This invokes each onSaved event
+
+      print('Form save called, newContact is now up to date...');
+      print('Email: ${newContact.name}');
+      print('Dob: ${newContact.dob}');
+      print('Phone: ${newContact.phone}');
+      print('Email: ${newContact.email}');
+      print('Favorite Color: ${newContact.favoriteColor}');
+      print('========================================');
+      print('Submitting to back end...');
+      print('TODO - we will write the submission part next...');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
