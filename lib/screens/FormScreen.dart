@@ -9,7 +9,6 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-
   String _color = '';
   List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
   Contact newContact = new Contact();
@@ -43,6 +42,12 @@ class _FormScreenState extends State<FormScreen> {
     } catch (e) {
       return null;
     }
+  }
+
+  bool isValidDob(String dob) {
+    if (dob.isEmpty) return true;
+    var d = convertToDate(dob);
+    return d != null && d.isBefore(new DateTime.now());
   }
 
   @override
@@ -82,6 +87,7 @@ class _FormScreenState extends State<FormScreen> {
                       ),
                       controller: _controller,
                       keyboardType: TextInputType.datetime,
+                      validator: (val) => isValidDob(val) ? null : 'Not a valid date',
                     )),
                     new IconButton(
                       icon: new Icon(Icons.more_horiz),
