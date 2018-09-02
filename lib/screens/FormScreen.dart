@@ -50,7 +50,10 @@ class _FormScreenState extends State<FormScreen> {
     var d = convertToDate(dob);
     return d != null && d.isBefore(new DateTime.now());
   }
-
+bool isValidEmail(String input) {
+    final RegExp regex = new RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+    return regex.hasMatch(input);
+  }
   void _submitForm() {
     final FormState form = _formKey.currentState;
 
