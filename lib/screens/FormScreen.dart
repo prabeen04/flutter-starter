@@ -50,7 +50,8 @@ class _FormScreenState extends State<FormScreen> {
     var d = convertToDate(dob);
     return d != null && d.isBefore(new DateTime.now());
   }
-void _submitForm() {
+
+  void _submitForm() {
     final FormState form = _formKey.currentState;
 
     if (!form.validate()) {
@@ -66,13 +67,17 @@ void _submitForm() {
       print('Favorite Color: ${newContact.favoriteColor}');
       print('========================================');
       print('Submitting to back end...');
-      print('TODO - we will write the submission part next...');
+      var contactService = new ContactService();
+      contactService.createContact(newContact).then((value) =>
+          showMessage('New contact created for ${value.name}!', Colors.blue));
     }
   }
-    void showMessage(String message, [MaterialColor color = Colors.red]) {
-    _scaffoldKey.currentState
-        .showSnackBar(new SnackBar(backgroundColor: color, content: new Text(message)));
+
+  void showMessage(String message, [MaterialColor color = Colors.red]) {
+    _scaffoldKey.currentState.showSnackBar(
+        new SnackBar(backgroundColor: color, content: new Text(message)));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -172,7 +177,7 @@ void _submitForm() {
                       padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                       child: RaisedButton(
                         child: const Text('Submit'),
-                        onPressed: null,
+                        onPressed: _submitForm,
                       )),
                 ],
               ))),
