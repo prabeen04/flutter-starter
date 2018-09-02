@@ -13,6 +13,7 @@ class _FormScreenState extends State<FormScreen> {
   List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
   Contact newContact = new Contact();
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final TextEditingController _controller = new TextEditingController();
 
   Future _chooseDate(BuildContext context, String initialDateString) async {
@@ -75,6 +76,7 @@ void _submitForm() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(title: Text('Form')),
       body: SafeArea(
           top: false,
